@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 39972541}
   - component: {fileID: 39972543}
   - component: {fileID: 39972542}
+  - component: {fileID: 39972544}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -202,7 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 39972541}
   m_TurnUsage: 0
-  m_Controllers: []
+  m_Controllers:
+  - {fileID: 1911614642}
   m_TurnAmount: 45
   m_DebounceTime: 0.5
   m_DeadZone: 0.75
@@ -219,6 +221,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 39972541}
+--- !u!114 &39972544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39972538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65755afe3cac1e644b0c3f850fffd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllers:
+  - {fileID: 329716492}
+  - {fileID: 992811388}
 --- !u!1 &43523745
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &329716489
 Transform:
   m_ObjectHideFlags: 0
@@ -1147,7 +1164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &992811384
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,7 +1595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1524037568
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,7 +1652,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.07035947, g: 1, b: 0, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1738,7 +1755,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.005
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1815,7 +1832,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 753356417}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_AttachTransform: {fileID: 0}
   m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEnter:
@@ -1852,7 +1869,7 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
-  m_LineType: 0
+  m_LineType: 1
   m_MaxRaycastDistance: 30
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
@@ -2363,7 +2380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1911614638
 Transform:
   m_ObjectHideFlags: 0
@@ -2420,7 +2437,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.07058824, g: 1, b: 0, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -2523,7 +2540,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.005
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -2600,7 +2617,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 753356417}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_AttachTransform: {fileID: 0}
   m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEnter:
@@ -2637,7 +2654,7 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
-  m_LineType: 0
+  m_LineType: 1
   m_MaxRaycastDistance: 30
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
@@ -2936,6 +2953,7 @@ GameObject:
   - component: {fileID: 6570128053780749816}
   - component: {fileID: 27564393941541829}
   - component: {fileID: 284505481701429370}
+  - component: {fileID: 284505481701429371}
   m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
@@ -2956,6 +2974,53 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.5785446, y: 0, z: 10.5299835}
   m_Center: {x: 0.65785456, y: 0, z: 0.45299816}
+--- !u!114 &284505481701429371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284505481701429369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 753356417}
+  m_Colliders:
+  - {fileID: 284505481701429370}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 3243884769686159862, guid: ba7331f932a688a4f8e39cea819590de,
+    type: 3}
+  m_TeleportationProvider: {fileID: 39972543}
+  m_MatchOrientation: 0
+  m_TeleportTrigger: 0
 --- !u!23 &407217590471685515
 MeshRenderer:
   m_ObjectHideFlags: 0

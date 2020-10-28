@@ -1083,10 +1083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65755afe3cac1e644b0c3f850fffd478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportationProvider: {fileID: 39972543}
   speed: 2
   controllers:
   - {fileID: 329716492}
   head: {fileID: 1584775561}
+  XRrig: {fileID: 39972538}
 --- !u!1 &967311180
 GameObject:
   m_ObjectHideFlags: 0

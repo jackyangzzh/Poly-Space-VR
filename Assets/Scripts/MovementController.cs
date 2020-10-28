@@ -6,11 +6,20 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MovementController : MonoBehaviour
 {
+    [SerializeField] TeleportationProvider teleportationProvider;
+
     public float speed = 1.0f;
-
     public List<XRController> controllers;
-
     public GameObject head = null;
+
+    private GameObject player;
+    public GameObject XRrig;
+
+
+    private void Awake()
+    {
+        player = this.gameObject;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,17 +27,34 @@ public class MovementController : MonoBehaviour
 
         foreach (XRController xRController in controllers)
         {
-            if (xRController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis,out Vector2 positionVector))
+            if (xRController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 positionVector))
             {
                 if (positionVector.magnitude > 0.15f)
                 {
                     Move(positionVector);
                 }
-                
+
             }
 
         }
 
+    }
+
+    private void OnEnable()
+    {
+        teleportationProvider.endLocomotion += OnEndLocomotion;
+    }
+
+    private void OnDisable()
+    {
+        teleportationProvider.endLocomotion -= OnEndLocomotion;
+    }
+
+    void OnEndLocomotion(LocomotionSystem locomotionSystem)
+    {
+        Debug.Log("Teleporation ended");
+        player.transform.position = player.transform.TransformPoint(XRrig.transform.localPosition);
+        XRrig.transform.localPosition = Vector3.zero;
     }
 
 

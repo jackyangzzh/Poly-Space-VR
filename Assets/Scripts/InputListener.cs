@@ -29,7 +29,6 @@ public class InputListener : MonoBehaviour
 
         foreach (InputDevice inputDevice in inputDevices)
         {
-            Debug.Log(inputDevice.name);
         }
     }
 }

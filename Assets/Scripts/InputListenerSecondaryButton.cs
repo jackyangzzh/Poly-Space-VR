@@ -41,7 +41,6 @@ public class InputListenerSecondaryButton : MonoBehaviour
         GetDevice();
         foreach (var device in devices)
         {
-            Debug.Log(device.name + " " + device.characteristics);
 
             if (device.isValid)
             {
@@ -52,8 +51,6 @@ public class InputListenerSecondaryButton : MonoBehaviour
                     if (!isPressed)
                     {
                         isPressed = true;
-                        Debug.Log("OnPress event is called");
-
                         OnPress.Invoke();
                     }
 
@@ -62,7 +59,6 @@ public class InputListenerSecondaryButton : MonoBehaviour
                 {
                     isPressed = false;
                     OnRelease.Invoke();
-                    Debug.Log("OnRelease event is called");
                 }
             }
             

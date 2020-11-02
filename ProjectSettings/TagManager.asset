@@ -16,8 +16,8 @@ TagManager:
   - Interactable
   - Teleportation
   - Player
-  - 
-  - 
+  - LocalAvatarHead
+  - LocalAvatarBody
   - 
   - 
   - 

@@ -129,14 +129,7 @@ namespace VRKeys {
 		/// Initialization.
 		/// </summary>
 		private IEnumerator Start () {
-			XRDevice.SetTrackingSpaceType (TrackingSpaceType.RoomScale);
-
-			playerSpace = new GameObject ("Play Space");
-			//playerSpace.transform.localPosition = InputTracking.GetLocalPosition (XRNode.TrackingReference);
-			//playerSpace.transform.localRotation = InputTracking.GetLocalRotation (XRNode.TrackingReference);
-
-			leftHand = new GameObject ("Left Hand");
-			rightHand = new GameObject ("Right Hand");
+			
 
 			yield return StartCoroutine (DoSetLanguage (keyboardLayout));
 
@@ -150,41 +143,11 @@ namespace VRKeys {
 			initialized = true;
 		}
 
-		private void Update () {
-			//playerSpace.transform.localPosition = InputTracking.GetLocalPosition (XRNode.TrackingReference);
-			//playerSpace.transform.localRotation = InputTracking.GetLocalRotation (XRNode.TrackingReference);
+		
 
-			leftHand.transform.localPosition = InputTracking.GetLocalPosition (XRNode.LeftHand);
-			leftHand.transform.localRotation = InputTracking.GetLocalRotation (XRNode.LeftHand);
+		
 
-			rightHand.transform.localPosition = InputTracking.GetLocalPosition (XRNode.RightHand);
-			rightHand.transform.localRotation = InputTracking.GetLocalRotation (XRNode.RightHand);
-		}
-
-		private void PositionAndAttachMallets () {
-			transform.SetParent (playerSpace.transform, false);
-			transform.localPosition = positionRelativeToUser;
-
-			leftMallet.transform.SetParent (leftHand.transform);
-			leftMallet.transform.localPosition = Vector3.zero;
-			leftMallet.transform.localRotation = Quaternion.Euler (90f, 0f, 0f);
-			leftMallet.SetActive (true);
-
-			rightMallet.transform.SetParent (rightHand.transform);
-			rightMallet.transform.localPosition = Vector3.zero;
-			rightMallet.transform.localRotation = Quaternion.Euler (90f, 0f, 0f);
-			rightMallet.SetActive (true);
-		}
-
-		private void DetachMallets () {
-			if (leftMallet != null) {
-				leftMallet.SetActive (false);
-			}
-
-			if (rightMallet != null) {
-				rightMallet.SetActive (false);
-			}
-		}
+		
 
 		/// <summary>
 		/// Make sure mallets don't stay attached if VRKeys is disabled without
@@ -216,7 +179,7 @@ namespace VRKeys {
 
 			EnableInput ();
 
-			PositionAndAttachMallets ();
+			
 		}
 
 		private IEnumerator EnableWhenInitialized () {
@@ -239,7 +202,7 @@ namespace VRKeys {
 				keysParent.gameObject.SetActive (false);
 			}
 
-			DetachMallets ();
+			
 		}
 
 		/// <summary>
@@ -324,7 +287,7 @@ namespace VRKeys {
 			leftPressing = false;
 			rightPressing = false;
 
-			PositionAndAttachMallets ();
+			
 
 			if (keys != null) {
 				foreach (LetterKey key in keys) {

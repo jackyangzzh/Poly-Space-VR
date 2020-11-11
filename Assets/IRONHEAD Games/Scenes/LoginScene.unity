@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 363095868}
   - component: {fileID: 363095867}
   - component: {fileID: 363095866}
+  - component: {fileID: 363095869}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -601,6 +602,14 @@ Transform:
   m_Father: {fileID: 1664906335}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &363095869
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363095865}
+  m_Enabled: 1
 --- !u!1001 &391684310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,6 +752,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 525501388}
@@ -750,6 +764,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ConnectToPhoton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 525501386}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889451999880535, guid: a3b336758d20aca40a3a5e32f88b3488,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4259889452471046910, guid: a3b336758d20aca40a3a5e32f88b3488,
         type: 3}

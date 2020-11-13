@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -30,8 +31,32 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        Debug.Log(message);
+        CreateAndJoinRoom();
+    }
+
+    public override void OnCreatedRoom()
+    {
+        Debug.Log(PhotonNetwork.CurrentRoom.Name + " is created");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log(PhotonNetwork.NickName + " joined");
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log("Player Count " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
     #endregion
+
+    private void CreateAndJoinRoom()
+    {
+        string randomRoomName = "Room_" + Random.Range(0, 10000);
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 20;    // Limit of the free version
+
+        PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
+    }
 }

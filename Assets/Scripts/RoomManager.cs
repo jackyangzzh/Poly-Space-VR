@@ -42,6 +42,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log(PhotonNetwork.NickName + " joined");
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerConstants.mapTypeKey))
+        {
+            object mapType;
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerConstants.mapTypeKey, out mapType))
+            {
+                Debug.Log(mapType.ToString());
+            }
+        }
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -56,6 +64,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
         string randomRoomName = "Room_" + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 20;    // Limit of the free version
+
+        string[] roomPropertyInLobby = { MultiplayerConstants.mapTypeKey };
+
+        ExitGames.Client.Photon.Hashtable customRoomProperty = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.mapTypeKey, MultiplayerConstants.mapTypeValueOutdoor } };
+
+
+        roomOptions.CustomRoomPropertiesForLobby = roomPropertyInLobby;
+        roomOptions.CustomRoomProperties = customRoomProperty;
 
         PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
     }

@@ -6,6 +6,8 @@ using Photon.Realtime;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
+    private string mapType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void JoinRandomRoom()
     {
         PhotonNetwork.JoinRandomRoom();
+    }
+
+    public void OnEnterRoomButton_Outdoor()
+    {
+        mapType = MultiplayerConstants.mapTypeValueOutdoor;
+        ExitGames.Client.Photon.Hashtable expectedRoomProperty = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.mapTypeKey, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties: expectedRoomProperty, 0);
+    }
+
+    public void OnEnterRoomButton_School()
+    {
+        mapType = MultiplayerConstants.mapTypeValueSchool;
+        ExitGames.Client.Photon.Hashtable expectedRoomProperty = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.mapTypeKey, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties: expectedRoomProperty, 0);
     }
 
     #endregion
@@ -67,8 +83,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         string[] roomPropertyInLobby = { MultiplayerConstants.mapTypeKey };
 
-        ExitGames.Client.Photon.Hashtable customRoomProperty = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.mapTypeKey, MultiplayerConstants.mapTypeValueOutdoor } };
-
+        ExitGames.Client.Photon.Hashtable customRoomProperty = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.mapTypeKey, mapType } };
 
         roomOptions.CustomRoomPropertiesForLobby = roomPropertyInLobby;
         roomOptions.CustomRoomProperties = customRoomProperty;

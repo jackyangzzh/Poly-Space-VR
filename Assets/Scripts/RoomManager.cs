@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // Update is called once per frame
@@ -64,9 +64,19 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerConstants.mapTypeKey, out mapType))
             {
                 Debug.Log(mapType.ToString());
+                switch ((string)mapType)
+                {
+                    case MultiplayerConstants.mapTypeValueSchool:
+                        PhotonNetwork.LoadLevel("World_School");
+                        break;
+                    case MultiplayerConstants.mapTypeValueOutdoor:
+                        PhotonNetwork.LoadLevel("World_Outdoor");
+                        break;
+                }
             }
         }
     }
+ 
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {

@@ -15,5 +15,15 @@ public class RoomManagerEditorScript : Editor
         {
             roomManager.JoinRandomRoom();
         }
+
+        if (GUILayout.Button("Join School Room"))
+        {
+            roomManager.OnEnterRoomButton_School();
+        }
+
+        if (GUILayout.Button("Join Outdoor Room"))
+        {
+            roomManager.OnEnterRoomButton_Outdoor();
+        }
     }
 }

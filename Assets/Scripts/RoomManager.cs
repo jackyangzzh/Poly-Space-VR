@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     private string mapType;
+    private int maxPlayerPerRoom = 20;
+    [SerializeField] TextMeshProUGUI numPlayer_school;
+    [SerializeField] TextMeshProUGUI numPlayer_outdoor;
 
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
+
+        if (PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.JoinLobby();
+        }
     }
 
     // Update is called once per frame
@@ -76,18 +85,44 @@ public class RoomManager : MonoBehaviourPunCallbacks
             }
         }
     }
- 
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        if (roomList.Count == 0)
+        {
+            // No room
+            numPlayer_school.text = 0 + " / " + maxPlayerPerRoom;
+            numPlayer_outdoor.text = 0 + " / " + maxPlayerPerRoom;
+        }
+        foreach (RoomInfo room in roomList)
+        {
+            Debug.Log(room.Name);
+            if (room.Name.Contains(MultiplayerConstants.mapTypeValueOutdoor))
+            {
+                numPlayer_outdoor.text = room.PlayerCount + " / " + maxPlayerPerRoom;
+            }
+            else if (room.Name.Contains(MultiplayerConstants.mapTypeValueSchool))
+            {
+                numPlayer_school.text = room.PlayerCount + " / " + maxPlayerPerRoom;
+            }
+        }
+    }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log("Player Count " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined to lobby");
+    }
+
     #endregion
 
     private void CreateAndJoinRoom()
     {
-        string randomRoomName = "Room_" + Random.Range(0, 10000);
+        string randomRoomName = "Room_" + mapType + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 20;    // Limit of the free version
 

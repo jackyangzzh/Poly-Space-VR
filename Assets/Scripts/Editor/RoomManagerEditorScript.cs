@@ -8,6 +8,8 @@ public class RoomManagerEditorScript : Editor
 {
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
+
         EditorGUILayout.HelpBox("Responsible for creating and joining rooms", MessageType.Info);
 
         RoomManager roomManager = (RoomManager)target;

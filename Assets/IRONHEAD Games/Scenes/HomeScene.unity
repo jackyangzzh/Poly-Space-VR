@@ -230,13 +230,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 39972538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65755afe3cac1e644b0c3f850fffd478, type: 3}
+  m_Script: {fileID: 11500000, guid: a5ec94d7e0bea964cbb5ff9c932751cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  controllers:
-  - {fileID: 329716492}
-  head: {fileID: 1584775561}
+  m_ActivationButtons: 06000000
+  m_DeactivationButtons: 03000000
+  m_LeftBaseController: {fileID: 329716488}
+  m_LeftTeleportController: {fileID: 1911614637}
+  m_RightBaseController: {fileID: 992811383}
+  m_RightTeleportController: {fileID: 1524037567}
 --- !u!1 &43523745
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &43523746
 Transform:
   m_ObjectHideFlags: 0
@@ -564,7 +566,7 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_PoseProvider: {fileID: 0}
   m_ControllerNode: 4
-  m_SelectUsage: 3
+  m_SelectUsage: 2
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
@@ -653,7 +655,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1010677015}
     m_Modifications:
     - target: {fileID: 2908198576419855284, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
@@ -673,17 +675,17 @@ PrefabInstance:
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0362389
+      value: 0.9356649
       objectReference: {fileID: 0}
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.035
+      value: 0.073230624
       objectReference: {fileID: 0}
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.4172125
+      value: -4.965206
       objectReference: {fileID: 0}
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
@@ -708,7 +710,7 @@ PrefabInstance:
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
         type: 3}
@@ -836,6 +838,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25024235, y: 0.17288893, z: 0.19511428}
   m_Center: {x: -0.027564026, y: 0.08812298, z: -0.0000000037252903}
+--- !u!4 &465480609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6553337728546429283, guid: b787c76c5e9f27d49b0358e843b9edb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 465480602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471471203
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +1005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892801962
 GameObject:
@@ -1010,6 +1018,7 @@ GameObject:
   - component: {fileID: 892801965}
   - component: {fileID: 892801964}
   - component: {fileID: 892801963}
+  - component: {fileID: 892801966}
   m_Layer: 0
   m_Name: VR Player Controller
   m_TagString: Untagged
@@ -1060,8 +1069,24 @@ Transform:
   m_Children:
   - {fileID: 39972540}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892801966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892801962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65755afe3cac1e644b0c3f850fffd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  controllers:
+  - {fileID: 329716492}
+  head: {fileID: 1584775561}
 --- !u!1 &967311180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1563,7 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_PoseProvider: {fileID: 0}
   m_ControllerNode: 5
-  m_SelectUsage: 3
+  m_SelectUsage: 2
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
@@ -1547,6 +1572,38 @@ MonoBehaviour:
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
+--- !u!1 &1010677014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010677015}
+  m_Layer: 0
+  m_Name: Scene Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010677015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010677014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.10057402, y: 0.96176934, z: 0.5479939}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 465480609}
+  - {fileID: 1554292151}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1194472272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1577,7 +1634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1223091977
 Transform:
   m_ObjectHideFlags: 0
@@ -1659,7 +1716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1524037568
 Transform:
   m_ObjectHideFlags: 0
@@ -1969,7 +2026,7 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_PoseProvider: {fileID: 0}
   m_ControllerNode: 5
-  m_SelectUsage: 3
+  m_SelectUsage: 2
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
@@ -1983,7 +2040,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1010677015}
     m_Modifications:
     - target: {fileID: 2117200102568480129, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
@@ -1998,22 +2055,22 @@ PrefabInstance:
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.701377
+      value: 0.60080296
       objectReference: {fileID: 0}
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15651892
+      value: -0.8052504
       objectReference: {fileID: 0}
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8886524
+      value: -1.4366462
       objectReference: {fileID: 0}
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
@@ -2033,7 +2090,7 @@ PrefabInstance:
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
         type: 3}
@@ -2161,6 +2218,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07374483, y: 0.31025645, z: 0.4355548}
   m_Center: {x: 0.000037640333, y: 0.0066286325, z: 0.13272184}
+--- !u!4 &1554292151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3114968798475927442, guid: 1cd7de6eee15b15468784544d15ae3f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1554292144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584775561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,7 +2507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1911614638
 Transform:
   m_ObjectHideFlags: 0
@@ -2754,7 +2817,7 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_PoseProvider: {fileID: 0}
   m_ControllerNode: 4
-  m_SelectUsage: 3
+  m_SelectUsage: 2
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1

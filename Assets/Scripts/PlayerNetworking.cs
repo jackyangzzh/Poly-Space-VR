@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerNetworking : MonoBehaviourPunCallbacks
 {
@@ -20,6 +21,15 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
 
             SetLayerRecursive(AvatarHead, 11);
             SetLayerRecursive(AvatarBody, 12);
+
+            TeleportationArea[] teleportationAreas = GameObject.FindObjectsOfType<TeleportationArea>();
+            if (teleportationAreas.Length > 0)
+            {
+                foreach (var item in teleportationAreas)
+                {
+                    item.teleportationProvider = localXRRig.GetComponent<TeleportationProvider>();
+                }
+            }
         }
         else
         {

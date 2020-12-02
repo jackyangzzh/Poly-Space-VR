@@ -17,7 +17,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
 
-        if (PhotonNetwork.IsConnectedAndReady)
+        if (!PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
         {
             PhotonNetwork.JoinLobby();
         }
@@ -106,6 +110,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 numPlayer_school.text = room.PlayerCount + " / " + maxPlayerPerRoom;
             }
         }
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

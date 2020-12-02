@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8184153613078814505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1946,7 +1946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6281262295847553342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2102,6 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRMenu: {fileID: 6609856423035588131}
+  HomeButton: {fileID: 6643874025446557051}
 --- !u!1 &6609856423035588131
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class HandSynchronization : MonoBehaviour, IPunObservable
     private Quaternion networkRotation_Left;
     private float angle_Left;
 
+    bool firsTake = false;
+
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
@@ -32,9 +34,19 @@ public class HandSynchronization : MonoBehaviour, IPunObservable
 
     }
 
+    private void OnEnable()
+    {
+        firsTake = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!photonView.IsMine)
+        {
+            leftHandTransform.localPosition = Vector3.MoveTowards(leftHandTransform.localPosition, networkPosition_Left, distance_Left * (1.0f / PhotonNetwork.SerializationRate));
+            leftHandTransform.localRotation = Quaternion.RotateTowards(leftHandTransform.localRotation, networkRotation_Left, angle_Left * (1.0f / PhotonNetwork.SerializationRate));
+        }
 
     }
 
@@ -51,7 +63,36 @@ public class HandSynchronization : MonoBehaviour, IPunObservable
         }
         else
         {
+            networkPosition_Left = (Vector3)stream.ReceiveNext();
+            handDirection_Left = (Vector3)stream.ReceiveNext();
 
+            if (firsTake)
+            {
+                leftHandTransform.localPosition = networkPosition_Left;
+                distance_Left = 0;
+            }
+            else
+            {
+                float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.SentServerTime));
+                networkPosition_Left += handDirection_Left * lag;
+                distance_Left = Vector3.Distance(leftHandTransform.localPosition, networkPosition_Left);
+            }
+
+            networkRotation_Left = (Quaternion)stream.ReceiveNext();
+            if (firsTake)
+            {
+                angle_Left = 0;
+                leftHandTransform.localRotation = networkRotation_Left;
+            }
+            else
+            {
+                angle_Left = Quaternion.Angle(leftHandTransform.localRotation, networkRotation_Left);
+            }
+
+            if (firsTake)
+            {
+                firsTake = false;
+            }
         }
     }
 

@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     public GameObject head = null;
 
     private GameObject player;
-    public GameObject XRrig;
+    public GameObject XrRig;
 
 
     private void Awake()
@@ -53,8 +53,8 @@ public class MovementController : MonoBehaviour
     void OnEndLocomotion(LocomotionSystem locomotionSystem)
     {
         Debug.Log("Teleporation ended");
-        player.transform.position = player.transform.TransformPoint(XRrig.transform.localPosition);
-        XRrig.transform.localPosition = Vector3.zero;
+        player.transform.position = player.transform.TransformPoint(XrRig.transform.localPosition);
+        XrRig.transform.localPosition = Vector3.zero;
     }
 
 

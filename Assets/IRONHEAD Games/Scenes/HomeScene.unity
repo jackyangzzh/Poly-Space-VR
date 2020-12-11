@@ -2251,7 +2251,7 @@ MonoBehaviour:
   controllers:
   - {fileID: 329716492}
   head: {fileID: 1584775561}
-  XRrig: {fileID: 39972538}
+  XrRig: {fileID: 39972538}
 --- !u!114 &892801967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4975,7 +4975,7 @@ MonoBehaviour:
   - {fileID: 284505481701429370}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []

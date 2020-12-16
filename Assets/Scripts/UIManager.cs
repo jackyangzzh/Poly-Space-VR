@@ -25,11 +25,11 @@ public class UIManager : MonoBehaviour
 
     public void OnHomeButtonClicked()
     {
-        Debug.Log("Home Button");
+
     }
 
     public void OnAvatarButtonClicked()
     {
-        Debug.Log("Avatar Button");
+        AvatarSelectionManager.Instance.ActivateAvatarSelectionPlatform();
     }
 }

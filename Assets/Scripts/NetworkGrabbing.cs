@@ -7,14 +7,14 @@ using Photon.Realtime;
 public class NetworkGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 {
     private PhotonView _photonView;
-    private Rigidbody rigidbody;
+    private Rigidbody _rigidbody;
 
     public bool isHeld = false;
 
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
@@ -28,12 +28,12 @@ public class NetworkGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
     {
         if (isHeld)
         {
-            rigidbody.isKinematic = true;
+            _rigidbody.isKinematic = true;
             gameObject.layer = 13;
         }
         else
         {
-            rigidbody.isKinematic = false;
+            _rigidbody.isKinematic = false;
             gameObject.layer = 8;
         }
     }

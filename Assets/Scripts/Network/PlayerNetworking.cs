@@ -9,6 +9,7 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
     [SerializeField] GameObject localXRRig;
     [SerializeField] GameObject AvatarHead;
     [SerializeField] GameObject AvatarBody;
+    [SerializeField] GameObject[] AvatarModelPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
             object avatarSelectionNumber;
             if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerConstants.avatarSelectionNumber, out avatarSelectionNumber))
             {
-                
+                photonView.RPC("InitializeSelectedAvatarModel", RpcTarget.AllBuffered, (int)avatarSelectionNumber);
             }
 
             SetLayerRecursive(AvatarHead, 11);
@@ -64,5 +65,25 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         {
             trans.gameObject.layer = layerNumber;
         }
+    }
+
+    [PunRPC]
+    public void InitializeSelectedAvatarModel(int avatarSelectionNumber)
+    {
+        GameObject selectedAvatarGameobject = Instantiate(AvatarModelPrefabs[avatarSelectionNumber], localXRRig.transform);
+
+        AvatarInputConverter avatarInputConverter = transform.GetComponent<AvatarInputConverter>();
+        AvatarHolder avatarHolder = selectedAvatarGameobject.GetComponent<AvatarHolder>();
+        SetUpAvatarGameobject(avatarHolder.HeadTransform, avatarInputConverter.AvatarHead);
+        SetUpAvatarGameobject(avatarHolder.BodyTransform, avatarInputConverter.AvatarBody);
+        SetUpAvatarGameobject(avatarHolder.HandLeftTransform, avatarInputConverter.AvatarHand_Left);
+        SetUpAvatarGameobject(avatarHolder.HandRightTransform, avatarInputConverter.AvatarHand_Right);
+    }
+
+    void SetUpAvatarGameobject(Transform avatarModelTransform, Transform mainAvatarTransform)
+    {
+        avatarModelTransform.SetParent(mainAvatarTransform);
+        avatarModelTransform.localPosition = Vector3.zero;
+        avatarModelTransform.localRotation = Quaternion.identity;
     }
 }

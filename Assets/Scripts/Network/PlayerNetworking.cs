@@ -19,6 +19,12 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
             gameObject.GetComponent<MovementController>().enabled = true;
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
 
+            object avatarSelectionNumber;
+            if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerConstants.avatarSelectionNumber, out avatarSelectionNumber))
+            {
+                
+            }
+
             SetLayerRecursive(AvatarHead, 11);
             SetLayerRecursive(AvatarBody, 12);
 

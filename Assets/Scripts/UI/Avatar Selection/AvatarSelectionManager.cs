@@ -8,7 +8,7 @@ public class AvatarSelectionManager : MonoBehaviour
     [SerializeField]
     GameObject AvatarSelectionPlatformGameobject;
 
-  
+
     public GameObject[] selectableAvatarModels;
     public GameObject[] loadableAvatarModels;
 
@@ -74,7 +74,7 @@ public class AvatarSelectionManager : MonoBehaviour
             avatarSelectionNumber = selectableAvatarModels.Length - 1;
         }
         ActivateAvatarModelAt(avatarSelectionNumber);
-        
+
     }
 
     /// <summary>
@@ -113,5 +113,8 @@ public class AvatarSelectionManager : MonoBehaviour
         avatarInputConverter.AvatarHead = loadableAvatarModels[avatarIndex].GetComponent<AvatarHolder>().HeadTransform;
         avatarInputConverter.AvatarHand_Left = loadableAvatarModels[avatarIndex].GetComponent<AvatarHolder>().HandLeftTransform;
         avatarInputConverter.AvatarHand_Right = loadableAvatarModels[avatarIndex].GetComponent<AvatarHolder>().HandRightTransform;
+
+        ExitGames.Client.Photon.Hashtable playerSelection = new ExitGames.Client.Photon.Hashtable() { { MultiplayerConstants.avatarSelectionNumber, avatarSelectionNumber } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(playerSelection);
     }
 }

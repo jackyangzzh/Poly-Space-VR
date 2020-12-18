@@ -38,6 +38,16 @@ public class AvatarSelectionManager : MonoBehaviour
         //Initially, de-activating the Avatar Selection Platform.
         AvatarSelectionPlatformGameobject.SetActive(false);
 
+        object storedAvatarNumber;
+        if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerConstants.avatarSelectionNumber, out storedAvatarNumber))
+        {
+            avatarSelectionNumber = (int)storedAvatarNumber;
+        }
+        else
+        {
+            avatarSelectionNumber = 0;
+        }
+
         avatarSelectionNumber = 0;
         ActivateAvatarModelAt(avatarSelectionNumber);
         LoadAvatarModelAt(avatarSelectionNumber);

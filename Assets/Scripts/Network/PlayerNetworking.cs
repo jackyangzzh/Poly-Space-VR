@@ -7,8 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayerNetworking : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject localXRRig;
+    [SerializeField] GameObject mainAvatar;
+
     [SerializeField] GameObject AvatarHead;
     [SerializeField] GameObject AvatarBody;
+
     [SerializeField] GameObject[] AvatarModelPrefabs;
 
     // Start is called before the first frame update
@@ -37,6 +40,7 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
                     item.teleportationProvider = localXRRig.GetComponent<TeleportationProvider>();
                 }
             }
+            mainAvatar.AddComponent<AudioListener>();
         }
         else
         {

@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 16516895e8a79bf49a6562c3c3b84cbf, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -55,6 +55,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShoreTex:
+        m_Texture: {fileID: 2800000, guid: 5fbcffe9c2077f04186883cb39275fcc, type: 3}
+        m_Scale: {x: 33.72, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -67,11 +71,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Shininess: 17.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _isInnerAlphaBlendOrColor: 0
     m_Colors:
+    - _BaseColor: {r: 0.37208048, g: 0.7794238, b: 0.8161765, a: 1}
+    - _BumpDirection: {r: 30, g: 30, b: 30, a: -50}
+    - _BumpTiling: {r: 0.01, g: 0.01, b: 0.01, a: 0.01}
     - _Color: {r: 0.4809096, g: 0.9528302, b: 0.8608205, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Foam: {r: 1.03, g: 2.68, b: 0, a: 0}
+    - _InvFadeParemeter: {r: 0.67, g: 0.17, b: 27.39, a: 9.18}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}

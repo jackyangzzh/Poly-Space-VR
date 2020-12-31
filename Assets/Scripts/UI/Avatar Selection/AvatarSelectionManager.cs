@@ -48,7 +48,7 @@ public class AvatarSelectionManager : MonoBehaviour
             avatarSelectionNumber = 0;
         }
 
-        avatarSelectionNumber = 0;
+        // avatarSelectionNumber = 0;
         ActivateAvatarModelAt(avatarSelectionNumber);
         LoadAvatarModelAt(avatarSelectionNumber);
     }

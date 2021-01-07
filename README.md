@@ -27,7 +27,7 @@ Glad you asked! Some of the more well-known VR platforms including VRChat and Al
   2. Clone or fork the repository
   3. Create a Photon Engine account (https://www.photonengine.com/en-US/Photon)
   4. Go to Dashboard and "CREATE A NEW APP"
-   - <img src="Assets/Docs/Tutorial/CreateApp.png" alt="Poly Space"	title="Create App" width="60%"/>
+   - <img src="Assets/Docs/Tutorial/CreateApp.PNG" alt="Poly Space"	title="Create App" width="60%"/>
   5. Create a new Photon with type **Photon Pun**, enter information you need.
   6. Next, create another new application, but this time, with a new Photon type **Photon Voice**. After you create it, is should look something like this.
    - <img src="Assets/Docs/Tutorial/AppID.png" alt="Poly Space" title="Create Photon" width="60%"/>

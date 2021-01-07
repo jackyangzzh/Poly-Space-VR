@@ -1,7 +1,7 @@
 # Poly-Space-VR
 
 <img src="Assets/Docs/Logo/logoSVG.svg" alt="Poly Space"
-	title="Poly Space VR" width="20%"/>
+	title="Poly Space VR" width="60%"/>
 
 Poly Space VR is a low poly, lightweight, open-source social platform where you can meet and chat with your friends in VR. You can create and share your own Poly Spaces by following the guidelines. Each month, a cool version of Poly Space VR will be selected and uploaded to Oculus Store so everyone can join in on the fun! 
 
@@ -27,14 +27,14 @@ Glad you asked! Some of the more well-known VR platforms including VRChat and Al
   2. Clone or fork the repository
   3. Create a Photon Engine account (https://www.photonengine.com/en-US/Photon)
   4. Go to Dashboard and "CREATE A NEW APP"
-   - <img src="Assets/Docs/Tutorial/CreateApp.png" alt="Poly Space"	title="Create App" width="40%"/>
+   - <img src="Assets/Docs/Tutorial/CreateApp.png" alt="Poly Space"	title="Create App" width="60%"/>
   5. Create a new Photon with type **Photon Pun**, enter information you need.
   6. Next, create another new application, but this time, with a new Photon type **Photon Voice**. After you create it, is should look something like this.
-   - <img src="Assets/Docs/Tutorial/AppID.png" alt="Poly Space" title="Create Photon" width="40%"/>
+   - <img src="Assets/Docs/Tutorial/AppID.png" alt="Poly Space" title="Create Photon" width="60%"/>
   7. Open up the project in Unity and open PhotonServerSettings file (under Assets/Photon/PhotonUnityNetworking/Resources)
-   - <img src="Assets/Docs/Tutorial/PhotonServer.png" alt="Poly Space" title="Home Scene" width="40%"/>
+   - <img src="Assets/Docs/Tutorial/PhotonServer.png" alt="Poly Space" title="Home Scene" width="60%"/>
   8. Enter AppIdPUN and AppIdVoice according to the ones on your Photon Dashboard  
-  9. Just like, that you are ready! Have fun creating your own Poly Space! 
+  9.  Just like, that you are ready! Have fun creating your own Poly Space! 
 	    
 
 ## Guidelines on creating and submitting your own polyspace ##
@@ -51,12 +51,13 @@ Here are some restrictions of Poly Space VR:
 ## Game Photos ##
 
 <img src="Assets/Docs/Screenshots/home.png" alt="Poly Space"
-	title="Home Scene" width="40%"/>
+	title="Home Scene" width="60%"/>
 
 <img src="Assets/Docs/Screenshots/saloon.png" alt="Poly Space"
-	title="Saloon Scene" width="40%"/>
+	title="Saloon Scene" width="60%"/>
 
 <img src="Assets/Docs/Screenshots/town.png" alt="Poly Space"
-	title="Home Scene" width="40%"/>
+	title="Home Scene" width="60%"/>
 
 ## License ##
+This project is MIT Licensed. Refer to [LICENSE](LICENSE). 

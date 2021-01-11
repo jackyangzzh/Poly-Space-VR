@@ -1,11 +1,11 @@
-# Poly-Space-VR
+# The Official Page of Poly Space VR #
 
 <img src="Assets/Docs/Logo/logoSVG.svg" alt="Poly Space"
 	title="Poly Space VR" width="60%"/>
 
 Poly Space VR is a low poly, lightweight, open-source social platform where you can meet and chat with your friends in VR. You can create and share your own Poly Spaces by following the guidelines. Each month, a cool version of Poly Space VR will be selected and uploaded to Oculus Store so everyone can join in on the fun! 
 
-This month's Poly Space is by: @jackyangzzh
+**This month's Poly Space is by: @jackyangzzh**
 
 ## Why Another "Low-Poly-VR-Social Place"? ##
 

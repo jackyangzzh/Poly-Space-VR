@@ -42,12 +42,17 @@ public class MovementController : MonoBehaviour
 
     private void OnEnable()
     {
-        teleportationProvider.endLocomotion += OnEndLocomotion;
+        if(teleportationProvider){
+            teleportationProvider.endLocomotion += OnEndLocomotion;
+        }
+        
     }
 
     private void OnDisable()
     {
-        teleportationProvider.endLocomotion -= OnEndLocomotion;
+        if(teleportationProvider){
+            teleportationProvider.endLocomotion -= OnEndLocomotion;
+        }
     }
 
     void OnEndLocomotion(LocomotionSystem locomotionSystem)

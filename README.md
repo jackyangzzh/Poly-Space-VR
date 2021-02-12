@@ -1,5 +1,11 @@
 # The Official Page of Poly Space VR #
 
+### GREAT NEWS: Now Available on [Oculus Store](https://www.oculus.com/experiences/rift/3258096647627881/)!!!
+<img src="Assets/Docs/Screenshots/Oculus App1.png" alt="Poly Space"
+	title="Poly Space VR" width="60%"/>
+
+
+## Introduction
 <img src="Assets/Docs/Logo/logoSVG.svg" alt="Poly Space"
 	title="Poly Space VR" width="60%"/>
 
@@ -20,7 +26,7 @@ Glad you asked! Some of the more well-known VR platforms including VRChat and Al
 
 ## Links ## 
 - Github Page: https://jackyangzzh.github.io/Poly-Space-VR/ 
-- Oculus Store: *Currently Under Review*
+- Oculus Store: https://www.oculus.com/experiences/rift/3258096647627881/
   
 ## How to run your own Poly Space ##
   1. Install Unity 2019.4.12

@@ -164,6 +164,12 @@ Transform:
   m_Father: {fileID: 1550246745}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &166592821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4259889453996848697, guid: a3b336758d20aca40a3a5e32f88b3488,
+    type: 3}
+  m_PrefabInstance: {fileID: 899042670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &215530939
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.876
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1137,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 4259889453996848700, guid: a3b336758d20aca40a3a5e32f88b3488,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.012
+      value: 2.302
       objectReference: {fileID: 0}
     - target: {fileID: 4259889453996848700, guid: a3b336758d20aca40a3a5e32f88b3488,
         type: 3}
@@ -1595,8 +1601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboard: {fileID: 998152455}
-  localVRPlayerCamera: {fileID: 2064139506}
-  relativePosition: {x: 0, y: 1.5, z: 1.75}
+  LoginPagePosition: {fileID: 166592821}
+  relativePosition: {x: 0, y: 0.3, z: -0.5}
   playerNameInputField: {fileID: 1102040067}
   leftMarret: {fileID: 237154819}
   rightMarret: {fileID: 1220593705}
@@ -2165,6 +2171,7 @@ GameObject:
   - component: {fileID: 2064139507}
   - component: {fileID: 2064139509}
   - component: {fileID: 2064139510}
+  - component: {fileID: 2064139511}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -2279,6 +2286,25 @@ MonoBehaviour:
   listOfObjectsToHideOnPause:
   - {fileID: 215530939}
   - {fileID: 1405673839}
+--- !u!114 &2064139511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064139506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65755afe3cac1e644b0c3f850fffd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportationProvider: {fileID: 0}
+  speed: 1
+  controllers:
+  - {fileID: 215530944}
+  - {fileID: 1405673844}
+  head: {fileID: 363095865}
+  XrRig: {fileID: 2064139506}
 --- !u!23 &39278136094710609
 MeshRenderer:
   m_ObjectHideFlags: 0

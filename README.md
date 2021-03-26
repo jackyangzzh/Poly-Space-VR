@@ -1,8 +1,8 @@
 # The Official Page of Poly Space VR #
 
 ### GREAT NEWS: Now Available on [Oculus Store](https://www.oculus.com/experiences/rift/3258096647627881/)!!!
-<img src="Assets/Docs/Screenshots/Oculus App1.png" alt="Poly Space"
-	title="Poly Space VR" width="60%"/>
+<img src="Assets/Docs/Screenshots/Screenshot Store.png" alt="Poly Space"
+	title="Poly Space VR" width="80%"/>
 
 
 ## Introduction
